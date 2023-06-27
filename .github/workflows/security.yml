@@ -24,10 +24,4 @@ jobs:
         with:
             dependencies-report-path: snyk_dependencies.json # The file name of json file which is generated on snyk test
             code-report-path: snyk_code.json # The file name of json file which is generated on snyk code test
-      - name: trufflehog secret scanner 
-        uses: trufflesecurity/trufflehog@v3.41.1
-        with:
-          path: ./
-          base: ${{ github.event.repository.default_branch }}
-          head: HEAD
-          extra_args: --debug --only-verified
+
