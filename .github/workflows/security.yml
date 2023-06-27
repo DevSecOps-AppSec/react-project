@@ -1,4 +1,4 @@
-name: Workflow for Node using Snyk
+name: Workflow for SAST & SCA
 on: push
 jobs:
   security:
@@ -25,7 +25,7 @@ jobs:
             dependencies-report-path: snyk_dependencies.json # The file name of json file which is generated on snyk test
             code-report-path: snyk_code.json # The file name of json file which is generated on snyk code test
       - name: test
-        run: echo ${{ github.event.repository.current_branch }} 
+        run: echo ${{ github.event.repository.branch }} 
       - name: trufflehog secret scanner 
         uses: trufflesecurity/trufflehog@v3.41.1
         with:
