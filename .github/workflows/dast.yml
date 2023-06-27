@@ -8,5 +8,5 @@ jobs:
       - name: ZAP Scan
         uses: zaproxy/action-baseline@v0.7.0
         with:
-         target: 'https://devsecops-appsec.github.io/react-project/'
+         target: 'https://souradip.in'
        
