@@ -1,10 +1,10 @@
-name: HawkScan
+name: DAST Scan
 on:
   push:
   pull_request:
 jobs:
   hawkscan:
-    name: HawkScan
+    name: DAST Scan 
     runs-on: ubuntu-latest
     steps:
       - name: Clone repo
