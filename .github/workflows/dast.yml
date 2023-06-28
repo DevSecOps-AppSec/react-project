@@ -1,6 +1,5 @@
 name: DAST Scan
 on:
-  push:
   pull_request:
 jobs:
   hawkscan:
