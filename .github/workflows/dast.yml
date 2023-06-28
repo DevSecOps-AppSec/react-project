@@ -1,15 +1,24 @@
-name: HawkScan
+name: DAST Scan
 on:
-  push:
   pull_request:
 jobs:
   hawkscan:
-    name: HawkScan
+    name: DAST Scan 
     runs-on: ubuntu-latest
     steps:
-      - name: Clone repo
+      - name: Checkout
         uses: actions/checkout@v2
+        with:
+          ref: main
       - name: Run HawkScan
         uses: stackhawk/hawkscan-action@v2
         with:
           apiKey: ${{ secrets.HAWK_API_KEY }}
+      - name: ZAP Scan
+        uses: zaproxy/action-baseline@v0.7.0
+        with:
+          token: ${{ secrets.ZAP_TOKEN }}
+          docker_name: 'owasp/zap2docker-live'
+          target: 'https://devsecops-appsec.github.io/react-project/'
+          cmd_options: '-a'
+         
