@@ -32,6 +32,7 @@ const App = () => {
         <form onSubmit={handleSubmit}>
           <div>
             <label htmlFor="name">Name:</label>
+            <br/>
             <input
               type="text"
               id="name"
@@ -42,6 +43,7 @@ const App = () => {
           </div>
           <div>
             <label htmlFor="email">Email:</label>
+            <br/>
             <input
               type="email"
               id="email"
@@ -52,6 +54,7 @@ const App = () => {
           </div>
           <div>
             <label htmlFor="description">Description:</label>
+            <br/>
             <textarea
               id="description"
               value={description}
